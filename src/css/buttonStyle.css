@@ -1,0 +1,33 @@
+.buttonStyle1 {
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    height: 40px;
+    width: 80px;
+    padding: 16px;
+    margin-left: 1px;
+    margin-right: 1px;
+    position: relative;
+    text-align: center;
+    line-height: 0.5;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+  }
+
+  .buttonStyle1:active {
+    box-shadow: #3c4fe0 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+
+  input.largecheckBox {
+    width: 30px;
+    height:30px;
+    /* background: #98AFC7; */
+    /* color: #98AFC7; */
+  }

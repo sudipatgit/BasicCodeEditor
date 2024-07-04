@@ -1,5 +1,6 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 import { CodingContext } from '../App'
+import '../css/buttonStyle.css'
 
 const buttonStyle = {
     margin: 1,
@@ -13,27 +14,55 @@ const buttonStyle = {
   }
 
 const SelectLang = () => {
-    const {setCodingLang, setCodeText} = useContext(CodingContext)
+    const {codingLang, setCodingLang, setCodeText, setShowLineNubers} = useContext(CodingContext)
 
     const handleClickToSetLang = (language) => {
         setCodingLang(language)
-        setCodeText('')
     }
 
+    const handleCheckBox = (e) => {
+        setShowLineNubers(e.target.checked)
+    }
+
+    useEffect(() => {
+        setCodeText('')
+      }, [codingLang])
+
     return (
-        <div style={{position: 'absolute', left : 700, top: 15 }}>
-            <button style={buttonStyle} onClick={() => handleClickToSetLang('javascript')}>
-                JS
-            </button>
-            <button style={buttonStyle} onClick={() => handleClickToSetLang('jsx')}>
-                React
-            </button>
-            <button style={buttonStyle} onClick={() => handleClickToSetLang('c')}>
-                C
-            </button>
-            <button style={buttonStyle} onClick={() => handleClickToSetLang('cpp')}>
-                C++
-            </button>
+        <div style={{display : 'flex', flexDirection : 'row', padding : 5, marginLeft : 20, marginTop : 40}} >
+            <div style={{padding : 4}}>
+                <button className = "buttonStyle1" onClick={() => handleClickToSetLang('javascript')}>
+                    JS
+                </button>
+            </div>
+            <div style={{padding : 4}}>
+                <button className = "buttonStyle1" onClick={() => handleClickToSetLang('jsx')}>
+                    React
+                </button>
+            </div>
+            <div style={{padding : 4}}>
+                <button className = "buttonStyle1" onClick={() => handleClickToSetLang('java')}>
+                    Java
+                </button>
+            </div>
+            <div style={{padding : 4}}>
+                <button className = "buttonStyle1" onClick={() => handleClickToSetLang('c')}>
+                    C
+                </button>
+            </div>
+            <div style={{padding : 4}}>
+                <button className = "buttonStyle1" onClick={() => handleClickToSetLang('cpp')}>
+                    C++
+                </button>
+            </div>
+            <div>
+                <div style={{ display : 'flex', flexDirection : 'row', marginLeft : 20, marginTop : 10, position : 'relative'}}>
+                    <input className='largecheckBox' id="lineNumberCheckbox" type = "checkbox" onChange = {handleCheckBox} />
+                    <div style={{marginTop : 6, marginLeft : 5, color : '#000080', fontSize : '20px'}} >
+                        Show Line Numbers
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

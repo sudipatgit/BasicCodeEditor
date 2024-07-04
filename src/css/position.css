@@ -1,0 +1,58 @@
+.container {
+    position: relative;
+    margin-left : 10px; 
+    margin-top: 10px; 
+    width: 800px;
+    height: 500px;
+  }
+  
+  .item {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* height: 500px; */
+    font-size: 14.5px;
+    font-family: monospace;
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+  
+  .withLineNum {
+    margin-top: 20px;
+    margin-left: 96px;
+    width: 94%;
+    color: transparent;
+    background: transparent;
+    /* background: #BDC6E7; */
+    /* border: 1px solid black; */
+    border: 0;
+    outline: none;
+    line-height: 1.6;
+    z-index: 2;
+    caret-color: black;
+    resize: none;
+  }
+
+  .withoutLineNum {
+    margin-top: 26px;
+    margin-left: 20px;
+    width: 94%;
+    /* color: coral; */
+    color: transparent;
+    background: transparent;
+    border: 0;
+    outline: none;
+    line-height: 1.6;
+    z-index: 2;
+    caret-color: black;
+    resize: none;
+  }
+  
+  .item2 {
+    width: 97%;
+    height: 95%;
+    background: #B9BED0;
+    z-index: 1;
+  }
+  

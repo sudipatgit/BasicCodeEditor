@@ -1,43 +1,20 @@
 import React, {useContext, useEffect} from 'react'
 import { CodingContext } from '../App';
-
-const codingAreaStyle = {
-  position: 'absolute', 
-  top: 40, 
-  left: 10, 
-  width: "49%",
-  margin: 10,
-  padding: 10,
-  height: 500,
-  outline: "none",
-  resize: "none",
-  border: 0,
-  fontSize: 15,
-  fontFamily: "monospace",
-  lineHeight: 2,
-  color: 'transparent',
-  background: 'transparent',
-  caretColor: 'white',
-  zIndex: 1,
-  overflowX: 'auto',
-  overflowY: 'auto',
-}
+import "../css/position.css"
 
 const CodingArea = () => {
-    const {codingLang, setCodeText} = useContext(CodingContext)
+    const {codingLang, setCodeText, codeText, showLineNumbers} = useContext(CodingContext)
 
     const handleKeyDown = (e) => {
         setCodeText(e.target.value)
     }
 
     useEffect(() => {
-      setCodeText('')
-    }, [codingLang])
+      // setCodeText('')
+    }, [showLineNumbers])
 
   return (
-        <textarea onChange={handleKeyDown} style={codingAreaStyle}
-            placeholder={"Start Coding Here in " + codingLang}
-        />
+        <textarea  className= {showLineNumbers ? 'item withLineNum' : 'item withoutLineNum' } value={codeText} onChange={handleKeyDown} placeholder={"Start Coding Here in " + codingLang}  />
   );
 };
 
